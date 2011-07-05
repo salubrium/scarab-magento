@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <PD_ScarabResearch>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Catalog />
+            </depends>
+        </PD_ScarabResearch>
+</modules>
+</config>

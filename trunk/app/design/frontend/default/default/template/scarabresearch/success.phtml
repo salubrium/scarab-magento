@@ -1,0 +1,18 @@
+<script>
+    Scarab.setOrderId('<?php echo $this->escapeHtml($this->getOrderId()); ?>');
+    
+<?php $sorder = Mage::getModel('sales/order')->load(Mage::getSingleton('checkout/session')->getLastOrderId()); 
+$sitems = $sorder->getAllItems();
+$email = $sorder->getCustomerEmail();
+$itemek = count($sitems);
+$sor = 0;
+foreach ($sitems as $sitem){
+$sor++;
+$product = $sitem->getProduct();
+
+echo "Scarab.checkOut('".$sitem->getProductId()."', ".($sitem->getQtyOrdered()*1).", ".$sitem[row_total_incl_tax].");";
+
+
+} ?> 
+
+</script>

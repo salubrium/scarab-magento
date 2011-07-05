@@ -1,0 +1,17 @@
+<?php
+$_scarabConfig = Mage::getStoreConfig('scarab_research/general');
+?> 
+<?php if($_scarabConfig['general']) { ?>
+<?php if($_scarabConfig['scarabproduct']) { ?>
+<div id="my-recommendation-container"></div>
+<script>
+Scarab.recommend('RELATED', 'my-recommendation-container', <?php echo $_scarabConfig['scarabproductcount']; ?>);
+</script>
+<?php }
+if($_scarabConfig['scarabproduct2']) { ?>
+<div id="my-recommendation-container2"></div>
+<script>
+Scarab.recommend('ALSO_VIEWED', 'my-recommendation-container2', <?php echo $_scarabConfig['scarabproductcount2']; ?>);
+</script>
+<?php }
+ } ?>
