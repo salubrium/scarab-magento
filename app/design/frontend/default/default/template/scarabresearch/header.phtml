@@ -1,0 +1,3 @@
+<?php if (Mage::getSingleton('customer/session')->isLoggedIn()) { ?>
+<script type="text/javascript">Scarab.setCustomerId('<?php echo $customerId = Mage::getSingleton('customer/session')->getCustomerId(); ?>');</script>
+<?php } ?>

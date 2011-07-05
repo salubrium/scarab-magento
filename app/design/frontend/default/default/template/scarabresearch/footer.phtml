@@ -1,0 +1,7 @@
+<?php
+$_scarabConfig = Mage::getStoreConfig('scarab_research/general');
+?>     
+<script>
+Scarab.setMerchantId('<?php echo $_scarabConfig['merchantid']; ?>');
+Scarab.go();
+</script>

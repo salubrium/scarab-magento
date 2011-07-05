@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<layout version="0.1.0">
+    
+    <catalog_product_view>
+		<reference name="content">
+			<block type="page/switch" name="scarab_view" after="-" template="scarabresearch/view.phtml"/>
+		</reference>
+        <reference name="product.info.additional">
+			<block type="page/switch" name="scarab_box1" before="-" template="scarabresearch/box_view.phtml"/>
+        </reference>
+    </catalog_product_view>
+  
+    <default>  
+    <reference name="head">
+            <action method="addItem" ifconfig="scarab_research/general/enabled"><type>skin_css</type><name>css/scarabresearch.css</name></action>
+            <action method="addItem" ifconfig="scarab_research/general/enabled"><type>skin_js</type><name>js/scarabresearch.js</name></action>
+    </reference>
+    <reference name="footer">
+			<block type="core/text_list" name="before_body_end" as="before_body_end" translate="label">
+                <block type="page/switch" name="scarab_footer" after="-" template="scarabresearch/footer.phtml"/>
+            </block>
+    </reference>
+    <reference name="header">
+			<block type="page/html_wrapper" name="top.container" as="topContainer" translate="label">
+                  <block type="page/switch" name="scarab_header" before="-" template="scarabresearch/header.phtml"/>
+            </block>
+    </reference>
+	</default>
+    <checkout_onepage_success>
+        <reference name="content">
+          
+				 <block type="page/switch" name="scarab_success" after="-" template="scarabresearch/success.phtml"/>
+			
+        </reference>
+    </checkout_onepage_success>    
+	<checkout_cart_index>
+	   <reference name="content">
+            <block type="page/switch" name="scarab_box2" after="-" template="scarabresearch/box_cart.phtml"/>
+        </reference>
+    </checkout_cart_index>
+</layout>

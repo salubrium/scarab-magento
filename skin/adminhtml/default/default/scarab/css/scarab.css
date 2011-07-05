@@ -1,0 +1,10 @@
+ul.tabs a.scarab_connector_section,
+ul.tabs a.scarab_connector_section:hover { background:url(../../images/tabs_span_bg.gif) repeat-x 0 100%; border-bottom:none; padding:0.5em 0.5em 0.28em 1.5em; }
+ul.tabs a.scarab_connector_section:hover { background-color:#d8e6e6; }
+ul.tabs a.scarab_connector_section.active, ul.tabs a.scarab_connector_section.active:hover { background-color:#fff; }
+ul.tabs a.scarab_connector_section span,
+ul.tabs a.scarab_connector_section:hover span { background:url(../images/scarab_logo_small.png) no-repeat 0 0; height:0; overflow:hidden; padding:18px 0 0; width:95px; }
+
+
+
+h3.scarab_connector_section { background: url("../images/scarab_logo.png") no-repeat scroll 0 0 transparent; height: 0; overflow: hidden; padding: 36px 0 0; width: 190px; }
