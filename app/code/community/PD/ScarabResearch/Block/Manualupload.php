@@ -12,7 +12,7 @@ class PD_ScarabResearch_Block_Manualupload extends Mage_Adminhtml_Block_System_C
         $html = $this->getLayout()->createBlock('adminhtml/widget_button')
                     ->setType('button')
                     ->setClass('scalable')
-                    ->setLabel('Create!')
+                    ->setLabel('Create Catalog!')
                     ->setOnClick("window.open('".$baseurl."scarab.php','window','width=400,height=200')")
                     ->toHtml();
         

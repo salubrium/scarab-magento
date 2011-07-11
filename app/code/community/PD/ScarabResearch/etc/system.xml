@@ -35,8 +35,8 @@
                             <show_in_store>1</show_in_store>
                         </enabled>
                         <merchantid translate="label">
-                            <label>Merchant Id</label>
-                            <comment>If you login to admin.scarabresearch.com, you will see it at the top of the page.</comment>
+                            <label>Merchant ID</label>
+                            <comment>If you login to your Scarab Dashboard, you will see it in the top left corner.</comment>
                             <frontend_type>text</frontend_type>
                             <sort_order>2</sort_order>
                             <show_in_default>1</show_in_default>
@@ -47,8 +47,8 @@
                 </general>
                 <export translate="label">
                     <label>Catalog Export</label>
-					<comment>Here you can catalog export status, and generate manually if needed</comment>
-                    <frontend_type>text</frontend_type>
+					<comment>To enable automated updates of your product catalog by Scarab, simply insert the following URL in your Scarab Dashboard > My Account > Catalog Export: mywebshopdomain.com/export/scarab.csv</comment>
+					<frontend_type>text</frontend_type>
                     <sort_order>5</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
@@ -65,7 +65,7 @@
                             <show_in_store>1</show_in_store>
                         </catalog_time>
                        	<manual>
-							<label>Upload catalog now</label>
+							<label>Export catalog now</label>
 							<comment>Catalog file will created in a new window, please do not close the window while working</comment>
                             <frontend_type>button</frontend_type>
                             <frontend_model>scarabresearch/manualupload</frontend_model>
