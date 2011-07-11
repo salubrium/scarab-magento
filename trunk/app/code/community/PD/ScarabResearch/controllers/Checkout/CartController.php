@@ -72,7 +72,7 @@ class PD_ScarabResearch_Checkout_CartController extends Mage_Checkout_CartContro
                 $this->_redirectReferer(Mage::helper('checkout/cart')->getCartUrl());
             }
         } catch (Exception $e) {
-            $this->_getSession()->addException($e, $this->__('Cannot add the item to shopping cart.'));
+            $this->_getSession()->addException($e, $this->__('Cannot add item to shopping cart.'));
             Mage::logException($e);
             $this->_goBack();
         }

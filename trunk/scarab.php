@@ -15,7 +15,7 @@ Mage::app();
 
 try {
 	Mage::getModel('scarabresearch/cron')->backup();
-	echo "Succesfully finished.";
+	echo "Export successful.";
 } catch (Exception $e) {
     Mage::printException($e);
 }
