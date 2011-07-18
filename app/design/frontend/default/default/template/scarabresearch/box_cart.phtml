@@ -3,6 +3,11 @@ $_scarabConfig = Mage::getStoreConfig('scarab_research/general');
 $_scarabConfigw = Mage::getStoreConfig('scarab_research/widgets');
 ?>     
 <?php if($_scarabConfig['enabled']) { ?>
+<script>
+<?php foreach($this->getItems() as $_item): ?>
+<?php echo "Scarab.setCart('".$_item->getProductId()."');"; ?>
+ <?php endforeach ?>
+</script>
 <?php if($_scarabConfigw['scarabcheckout']) { ?>
 <div id="my-recommendation-container"></div>
 <script>
