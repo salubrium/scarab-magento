@@ -44,7 +44,7 @@ class PD_ScarabResearch_Checkout_CartController extends Mage_Checkout_CartContro
 
             if (!$this->_getSession()->getNoCartRedirect(true)) {
                 if (!$cart->getQuote()->getHasError()){
-					$ar = Mage::helper('tax')->getPrice($product, $product->getFinalPrice(), 2);
+					$ar = Mage::helper('tax')->getPrice($product, $product->getFinalPrice(), 2)*$params['qty'];
 					$kosarba = '<script>Scarab.addToCart(\''.$product->getId().'\', '.$params['qty'].', '.$ar.');</script>';
 					$message2 = $this->__($kosarba);
 					$message = $this->__('%s was added to your shopping cart.', Mage::helper('core')->htmlEscape($product->getName()));
