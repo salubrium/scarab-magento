@@ -39,4 +39,9 @@
             <block type="page/switch" name="scarab_box2" after="-" template="scarabresearch/box_cart.phtml"/>
         </reference>
     </checkout_cart_index>
+    <customer_account_index>
+        <reference name="my.account.wrapper">
+            <block type="page/switch" name="customer_account_dashboard_personal" before="-" template="scarabresearch/personal.phtml"/>
+        </reference>
+    </customer_account_index>
 </layout>
