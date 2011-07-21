@@ -116,7 +116,7 @@
 					<cron_expr>0 4 * * *</cron_expr>
 				</schedule>
 				<run>
-					<model>scarabresearch/cron::backup</model>
+					<model>scarabresearch/cron::backupcron</model>
 				</run>
 			</export_scarab>
 		</jobs>
