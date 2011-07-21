@@ -15,4 +15,10 @@ if($_scarabConfigw['scarabproduct2']) { ?>
 Scarab.recommend('ALSO_VIEWED', 'my-recommendation-container2', <?php echo $_scarabConfigw['scarabproductcount2']; ?>);
 </script>
 <?php }
+if($_scarabConfigw['scarabproduct3']) { ?>
+<div id="my-recommendation-container3"></div>
+<script>
+Scarab.recommend('ALSO_BOUGHT', 'my-recommendation-container3', <?php echo $_scarabConfigw['scarabproductcount3']; ?>);
+</script>
+<?php }
  } ?>
