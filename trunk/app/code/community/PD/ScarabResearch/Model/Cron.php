@@ -1,12 +1,5 @@
 <?php
 
-/**
- * Cron model
- *
- * @category    Centerax
- * @package     Centerax_AutomaticBackup
- * @author      Centerax <cx@pablobenitez.com>
- */
 
 class PD_ScarabResearch_Model_Cron
 {
@@ -80,7 +73,7 @@ $stock = "true";
 	$product_data['product_url']=$product->getProductUrl();
 	$product_data['name']=$product->getName();
 	$product_data['image']=Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."catalog/product".$product->getImage();
-	$product_data['kat']=$kateg;
+   $product_data['kat']=str_replace("/",">", $kateg);
 	$product_data['price']=$finalprice;
 	$product_data['status']=$stock;
 	$product_data['manufacturer']=$product->getAttributeText('manufacturer');
@@ -108,19 +101,7 @@ $stock = "true";
  //---------------------- WRITE THE FEED
  fclose($handle);
 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
+
 
         } catch (Exception  $e) {
             Mage::logException($e);
