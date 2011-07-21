@@ -11,11 +11,11 @@
                 <class>PD_ScarabResearch_Model</class>
             </scarabresearch>
         </models>
-		<blocks>
-			<scarabresearch>
-				<class>PD_ScarabResearch_Block</class>
-			</scarabresearch>
-		</blocks>
+            <blocks>
+                  <scarabresearch>
+                        <class>PD_ScarabResearch_Block</class>
+                  </scarabresearch>
+            </blocks>
         <helpers>
             <scarabresearch>
                 <class>PD_ScarabResearch_Helper</class>
@@ -42,24 +42,26 @@
             </scarabresearch_read>
         </resources>
     </global>
-	<default>
+      <default>
         <scarab_research>
             <general>
-				<enabled>0</enabled>
-				<merchantid></merchantid>
+                        <enabled>0</enabled>
+                        <merchantid></merchantid>
             </general>
             <export>
             </export>
-			<widgets>
+                  <widgets>
                 <scarabproduct>0</scarabproduct>
                 <scarabproductcount>4</scarabproductcount>
                 <scarabproduct2>0</scarabproduct2>
                 <scarabproductcount2>4</scarabproductcount2>
-				<scarabcheckout>0</scarabcheckout>
-				<scarabcheckoutcount>4</scarabcheckoutcount>
-				<scarabcheckout2>0</scarabcheckout2>
-				<scarabcheckoutcount2>4</scarabcheckoutcount2>
-			</widgets>
+                <scarabproduct3>0</scarabproduct3>
+                <scarabproductcount3>4</scarabproductcount3>
+                        <scarabcheckout>0</scarabcheckout>
+                        <scarabcheckoutcount>4</scarabcheckoutcount>
+                        <scarabcheckout2>0</scarabcheckout2>
+                        <scarabcheckoutcount2>4</scarabcheckoutcount2>
+                  </widgets>
         </scarab_research>
     </default>
     <frontend>
@@ -100,25 +102,25 @@
                     </children>
                 </admin>
             </resources>
-        </acl>		
-		<layout>
-			<updates>
-				<scarabresearch>
-					<file>scarab_connector.xml</file>
-				</scarabresearch>
-			</updates>
-		</layout>
+        </acl>            
+            <layout>
+                  <updates>
+                        <scarabresearch>
+                              <file>scarab_connector.xml</file>
+                        </scarabresearch>
+                  </updates>
+            </layout>
     </adminhtml>
-	<crontab>
-		<jobs>
-			<export_scarab>
-				<schedule>
-					<cron_expr>0 4 * * *</cron_expr>
-				</schedule>
-				<run>
-					<model>scarabresearch/cron::backupcron</model>
-				</run>
-			</export_scarab>
-		</jobs>
-	</crontab>
+      <crontab>
+            <jobs>
+                  <export_scarab>
+                        <schedule>
+                              <cron_expr>0 4 * * *</cron_expr>
+                        </schedule>
+                        <run>
+                              <model>scarabresearch/cron::backupcron</model>
+                        </run>
+                  </export_scarab>
+            </jobs>
+      </crontab>
 </config>
