@@ -3,29 +3,20 @@ $_scarabConfig = Mage::getStoreConfig('scarab_research/general');
 $_scarabConfigw = Mage::getStoreConfig('scarab_research/widgets');
 ?>     
 <?php if($_scarabConfig['enabled']) { ?>
+<?php $product_ids = Mage::getModel('checkout/cart')->getProductIds(); ?>
 <script>
-<?php foreach($this->getItems() as $_item): ?>
-<?php echo "Scarab.setCart('".$_item->getProductId()."');"; ?>
+<?php foreach($product_ids as $pid): ?>
+<?php echo "Scarab.cartItem('".$pid."');"; ?>
  <?php endforeach ?>
 </script>
 <?php if($_scarabConfigw['scarabcheckout']) { ?>
 <div id="my-recommendation-container"></div>
-<script>
-<?php foreach($this->getItems() as $_item): ?>
-<?php echo "Scarab.cartItem('".$_item->getProductId()."');"; ?>
- <?php endforeach ?>
-</script>
 <script>
 Scarab.recommend('CART', 'my-recommendation-container', <?php echo $_scarabConfigw['scarabcheckoutcount']; ?>);
 </script>
 <?php }
 if($_scarabConfigw['scarabcheckout2']) { ?>
 <div id="my-recommendation-container2"></div>
-<script>
-<?php foreach($this->getItems() as $_item): ?>
-<?php echo "Scarab.cartItem('".$_item->getProductId()."');"; ?>
- <?php endforeach ?>
-</script>
 <script>
 Scarab.recommend('PERSONAL', 'my-recommendation-container2', <?php echo $_scarabConfigw['scarabcheckoutcount2']; ?>);
 </script>
