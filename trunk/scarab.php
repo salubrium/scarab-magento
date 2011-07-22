@@ -3,9 +3,9 @@
 /**
 Manual catalog export
  */
-
-require 'app/Mage.php';
 echo "Catalog export in progress...";
+require 'app/Mage.php';
+
 if (!Mage::isInstalled()) {
     echo "Application is not installed yet. Please complete installation first.";
     die;
