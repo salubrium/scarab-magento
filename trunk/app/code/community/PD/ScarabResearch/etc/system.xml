@@ -2,7 +2,7 @@
 <config>
     <tabs>
         <pro_digital translate="label" module="scarabresearch">
-            <label>ScarabConnector for Magento</label>
+            <label>Scarab Magento Connector</label>
             <sort_order>196</sort_order>
         </pro_digital>
     </tabs>
