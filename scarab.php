@@ -1,9 +1,10 @@
+echo "Catalog export in progress...";
 <?php
 
 /**
 Manual catalog export
  */
-echo "Catalog export in progress...";
+
 require 'app/Mage.php';
 
 if (!Mage::isInstalled()) {
