@@ -19,7 +19,7 @@ class PD_ScarabResearch_Model_Cron
 		 
  define('SAVE_FEED_LOCATION',Mage::getBaseDir().'/export/scarab.csv');
  $handle = fopen(SAVE_FEED_LOCATION, 'w');
- $heading = array('item','link','title','image','category','price','available','author');
+ $heading = array('item','link','title','image','category','price','available','brand');
  $feed_line=implode(",", $heading)."\r\n";
  fwrite($handle, $feed_line); 
 
