@@ -2,7 +2,7 @@
 <config>
     <tabs>
         <pro_digital translate="label" module="scarabresearch">
-            <label>Scarab Magento Connector</label>
+            <label>ScarabConnector for Magento</label>
             <sort_order>196</sort_order>
         </pro_digital>
     </tabs>
@@ -26,7 +26,7 @@
                     <show_in_store>1</show_in_store>
                     <fields>
                         <enabled translate="label">
-                            <label>Enable Scarab Connector</label>
+                            <label>Enable ScarabConnector</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>1</sort_order>
@@ -47,7 +47,7 @@
                 </general>
                 <export translate="label">
                     <label>Catalog Export</label>
-					<comment>To enable automated updates of your product catalog by Scarab, simply insert the following URL in your Scarab Dashboard > My Account > Catalog Export: mywebshopdomain.com/export/scarab.csv</comment>
+					<comment>To enable automatic updates of your product catalog by Scarab, simply insert the following URL in Scarab Dashboard > My Account > Catalog Export: <br> http://mywebshopdomain.com/export/scarab.csv</comment>
 					<frontend_type>text</frontend_type>
                     <sort_order>5</sort_order>
                     <show_in_default>1</show_in_default>
@@ -65,8 +65,8 @@
                             <show_in_store>1</show_in_store>
                         </catalog_time>
                        	<manual>
-							<label>Export catalog now</label>
-							<comment>Catalog file will created in a new window, please do not close the window while working</comment>
+							<label>Manual catalog export:</label>
+							<comment>Catalog file will be created in a popup window - please do not close the window while working</comment>
                             <frontend_type>button</frontend_type>
                             <frontend_model>scarabresearch/manualupload</frontend_model>
                             <sort_order>50</sort_order>
@@ -85,7 +85,7 @@
                     <show_in_store>1</show_in_store>
                     <fields>
 						<scarabproduct translate="label">
-                            <label>Product Page RELATED</label>
+                            <label>Product Page - RELATED</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>1</sort_order>
@@ -94,8 +94,8 @@
                             <show_in_store>1</show_in_store>
                         </scarabproduct>
                         <scarabproductcount translate="label">
-                            <label>Product count on view page</label>
-                            <comment>Number of displayed product in recommender box.</comment>
+                            <label>Items shown</label>
+                            <comment>Number of items displayed in recommender widget.</comment>
                             <frontend_type>text</frontend_type>
                             <sort_order>2</sort_order>
                             <show_in_default>1</show_in_default>
@@ -103,7 +103,7 @@
                             <show_in_store>1</show_in_store>
                         </scarabproductcount>
 						<scarabproduct2 translate="label">
-                            <label>Product Page ALSO_VIEWED</label>
+                            <label>Product Page - ALSO_VIEWED</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>3</sort_order>
@@ -112,8 +112,8 @@
                             <show_in_store>1</show_in_store>
                         </scarabproduct2>
                         <scarabproductcount2 translate="label">
-                            <label>Product count on view page</label>
-                            <comment>Number of displayed product in recommender box.</comment>
+                            <label>Items shown</label>
+                            <comment>Number of items displayed in recommender widget.</comment>
                             <frontend_type>text</frontend_type>
                             <sort_order>4</sort_order>
                             <show_in_default>1</show_in_default>
@@ -122,7 +122,7 @@
                         </scarabproductcount2>
                         
                         <scarabproduct3 translate="label">
-                            <label>Product Page ALSO_BOUGHT</label>
+                            <label>Product Page - ALSO_BOUGHT</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>5</sort_order>
@@ -131,8 +131,8 @@
                             <show_in_store>1</show_in_store>
                         </scarabproduct3>
                         <scarabproductcount3 translate="label">
-                            <label>Product count on view page</label>
-                            <comment>Number of displayed product in recommender box.</comment>
+                            <label>Items shown</label>
+                            <comment>Number of items displayed in recommender widget.</comment>
                             <frontend_type>text</frontend_type>
                             <sort_order>6</sort_order>
                             <show_in_default>1</show_in_default>
@@ -140,37 +140,37 @@
                             <show_in_store>1</show_in_store>
                         </scarabproductcount3>
 						<scarabcheckout translate="label">
-                            <label>Cart/Checkout Page - CART</label>
-                            <frontend_type>select</frontend_type>
-                            <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>5</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </scarabcheckout>
-                        <scarabcheckoutcount translate="label">
-                            <label>Product count on checkout page</label>
-                            <comment>Number of displayed product in recommender box.</comment>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>6</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </scarabcheckoutcount>
-						<scarabcheckout2 translate="label">
-                            <label>Cart/Checkout Page - PERSONAL</label>
+                            <label>Cart Page - CART</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>7</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </scarabcheckout2>
-                        <scarabcheckoutcount2 translate="label">
-                            <label>Product count on checkout page</label>
-                            <comment>Number of displayed product in recommender box.</comment>
+                        </scarabcheckout>
+                        <scarabcheckoutcount translate="label">
+                            <label>Items shown</label>
+                            <comment>Number of items displayed in recommender widget.</comment>
                             <frontend_type>text</frontend_type>
                             <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </scarabcheckoutcount>
+						<scarabcheckout2 translate="label">
+                            <label>Cart Page / Dashboard - PERSONAL</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </scarabcheckout2>
+                        <scarabcheckoutcount2 translate="label">
+                            <label>Items shown</label>
+                            <comment>Number of items displayed in recommender widget.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
