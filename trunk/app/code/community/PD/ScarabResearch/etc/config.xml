@@ -61,6 +61,8 @@
                         <scarabcheckoutcount>4</scarabcheckoutcount>
                         <scarabcheckout2>0</scarabcheckout2>
                         <scarabcheckoutcount2>4</scarabcheckoutcount2>
+                        <scarabcheckout3>0</scarabcheckout3>
+                        <scarabcheckoutcount3>4</scarabcheckoutcount3>
                   </widgets>
         </scarab_research>
     </default>
