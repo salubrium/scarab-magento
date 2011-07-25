@@ -1,1 +1,14 @@
-s/
+<?php if (Mage::getSingleton('customer/session')->isLoggedIn()) { ?>
+<?php
+$_scarabConfig = Mage::getStoreConfig('scarab_research/general');
+$_scarabConfigw = Mage::getStoreConfig('scarab_research/widgets');
+?>     
+<?php if($_scarabConfig['enabled']) { ?>
+<?php if($_scarabConfigw['scarabcheckout3']) { ?>
+<div id="my-recommendation-container3"></div>
+<script>
+Scarab.recommend('PERSONAL', 'my-recommendation-container3', <?php echo $_scarabConfigw['scarabcheckoutcount3']; ?>);
+</script>
+<?php }
+}
+} ?>
