@@ -1,4 +1,3 @@
-echo "Catalog export in progress...";
 <?php
 
 /**
