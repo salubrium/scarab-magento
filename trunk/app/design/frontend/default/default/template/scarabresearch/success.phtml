@@ -1,5 +1,5 @@
 <script>
-    Scarab.setOrderId('<?php echo $this->escapeHtml($this->getOrderId()); ?>');
+    Scarab.setOrderId('<?php echo Mage::getSingleton('checkout/session')->getLastOrderId(); ?>');
     
 <?php $sorder = Mage::getModel('sales/order')->load(Mage::getSingleton('checkout/session')->getLastOrderId()); 
 $sitems = $sorder->getAllItems();
