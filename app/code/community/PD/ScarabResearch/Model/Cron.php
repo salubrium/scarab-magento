@@ -70,7 +70,7 @@ $stock = "true";
 	
 	$product_data = array();
 	$product_data['item']=$product->getId();
-	$product_data['product_url']=$product->getProductUrl();
+      $product_data['product_url']=str_replace("/scarab.php/","/",$product->getProductUrl());
 	$product_data['name']=$product->getName();
 	$product_data['image']=Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."catalog/product".$product->getImage();
    $product_data['kat']=str_replace("/"," > ", $kateg);
