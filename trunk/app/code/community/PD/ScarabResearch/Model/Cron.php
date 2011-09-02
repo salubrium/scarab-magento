@@ -27,7 +27,7 @@ class PD_ScarabResearch_Model_Cron
     $collection = Mage::getModel('catalog/product')
 ->getCollection()
 ->addAttributeToSelect('name')
-->addAttributeToSelect('manufacturer')
+->addAttributeToSelect('manufacturer', $joinType=false)
 ->addAttributeToSelect('price');
 
 
