@@ -24,10 +24,16 @@ class PD_ScarabResearch_Model_Cron
  fwrite($handle, $feed_line); 
 
     //Loop through and print each products info
-   $collection = Mage::getModel('catalog/product')->getCollection();
+    $collection = Mage::getModel('catalog/product')
+->getCollection()
+->addAttributeToSelect('name')
+->addAttributeToSelect('manufacturer')
+->addAttributeToSelect('price');
+
+
 foreach ($collection as $product) 
     {
-$product = $product->load($product->getId());
+
 
 
 
