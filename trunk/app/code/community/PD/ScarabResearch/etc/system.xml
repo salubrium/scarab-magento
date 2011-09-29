@@ -75,7 +75,46 @@
                             <show_in_store>1</show_in_store>
 						</manual>
                     </fields>
-                </export>
+        </export>
+        <salesexport translate="label">
+                    <label>Lifetime Sales Export</label>
+					<comment>To enable updates of your sales catalog by Scarab, simply insert the following URL in Scarab Dashboard > My Account > Sales Export: http://mywebshopdomain.com/export/scarabsales.csv</comment>
+					<frontend_type>text</frontend_type>
+                    <sort_order>5</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                       	<salestimefrom>
+							<label>From Date:</label>
+							<comment>From date you want to collect sales data... (format: YYYY-MM-DD)</comment>
+							<frontend_type>pdDateSelection</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</salestimefrom>
+                       	<salestimeto>
+							<label>To Date:</label>
+							<comment>To date you want to collect sales data... (format: YYYY-MM-DD)</comment>
+							<frontend_type>pdDateSelection</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</salestimeto>
+                       	<salesmanual>
+							<label>Sales export:</label>
+							<comment>Save date fields, before starting an export, or leave blank for all time sales. Sales file will be created in a popup window - please do not close the window while working.</comment>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>scarabresearch/salesmanualupload</frontend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</salesmanual>
+                    </fields>
+        </salesexport>
 				<widgets translate="label">
                     <label>Recommender Widgets</label>
                     <frontend_type>text</frontend_type>
