@@ -50,6 +50,8 @@
             </general>
             <export>
             </export>
+            <salesexport>
+            </salesexport>
                   <widgets>
                 <scarabproduct>0</scarabproduct>
                 <scarabproductcount>4</scarabproductcount>
