@@ -26,11 +26,15 @@ class PD_ScarabResearch_Model_Salescron
 $_scconf = Mage::getStoreConfig('scarab_research/salesexport');
 	$starttime = $_scconf['salestimefrom'];
 	$endtime = $_scconf['salestimeto'];
-if ($starttime) {
+if (strlen($starttime) > 5) {
 $startw = " AND I.created_at > '$starttime'";
+} else {
+$startw = "";
 }
-if ($endtime) {
+if (strlen($endtime) > 5) {
 $endw = " AND I.created_at < '$endtime'";
+} else {
+$endw = "";
 }
 	
 	
