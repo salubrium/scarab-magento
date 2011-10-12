@@ -50,6 +50,10 @@
             </general>
             <export>
             </export>
+            <resize>
+                <resizeenabled>0</resizeenabled>
+                <resizewidth>100</resizewidth>
+            </resize>
             <salesexport>
             </salesexport>
                   <widgets>
