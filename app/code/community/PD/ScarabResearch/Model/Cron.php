@@ -35,10 +35,8 @@ class PD_ScarabResearch_Model_Cron
 
 foreach ($collection as $product) 
     {
-
-
-
-
+$id = $product->getId();
+$product = Mage::getModel('catalog/product')->load($id);
 $kateg = "";
 
 # Get product's category collection object
@@ -80,7 +78,14 @@ $stock = "true";
 	$product_data['item']=$product->getId();
       $product_data['product_url']=str_replace("/scarab.php/","/",$product->getProductUrl());
 	$product_data['name']=$product->getName();
+  $rconf = Mage::getStoreConfig('scarab_research/resize');
+	$renabled = $rconf['resizeenabled'];
+	$width = $rconf['resizewidth'];
+	if ($renabled) {
+	$product_data['image']=Mage::getBaseUrl()."timthumb.php?src=".Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."catalog/product".$product->getImage()."&amp;w=".$width."&amp;zc=1";
+	} else {
 	$product_data['image']=Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."catalog/product".$product->getImage();
+	}
    $product_data['kat']=str_replace("/"," > ", $kateg);
 	$product_data['price']=$finalprice;
 	$product_data['status']=$stock;
