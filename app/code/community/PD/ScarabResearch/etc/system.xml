@@ -77,8 +77,8 @@
                     </fields>
               </export>
               <resize translate="label">
-                    <label>Image resizing</label>
-                   <comment>Here you can add custom image size, for the images in recommender boxes. If you enable this option, you need to make a fresh catalog export, or/and wait one day for processing it.</comment>
+                    <label>Product image thumbnails</label>
+                   <comment>By default, the product images that are shown in the Scarab recommender widgets are original size images. Although modern browsers handle well the job of scaling these images down to size, we offer you the option to force ScarabConnector to scale down your product images using a third-party solution. Timthumb (http://code.google.com/p/timthumb/)  will scale down any product image to a preset thumbnail size, so that image quality is kept at a constant best.<br/> If you enable this option, you will need to manually upload a fesh copy of the catalog to the Scarab Dashboard, or wait until the new catalog is processed at the next schedule synchronization.</comment>
                    <frontend_type>text</frontend_type>
                     <sort_order>6</sort_order>
                     <show_in_default>1</show_in_default>
@@ -86,7 +86,7 @@
                     <show_in_store>1</show_in_store>
                     <fields>
                         <resizeenabled translate="label">
-                            <label>Enable Resize</label>
+                            <label>Enable thumbnails</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>1</sort_order>
@@ -95,8 +95,8 @@
                             <show_in_store>1</show_in_store>
                         </resizeenabled>
                         <resizewidth translate="label">
-                            <label>Image width</label>
-                            <comment>The width of images in pixel.Default is '100' if you set a bigger value, you need to edit scarabresearch.css file.</comment>
+                            <label>Thumbnail width</label>
+                            <comment>Set thumbnail width value in pixels. Maximum value is '100' - you need to edit scarabresearch.css file if you want larger.</comment>
                             <frontend_type>text</frontend_type>
                             <sort_order>2</sort_order>
                             <show_in_default>1</show_in_default>
@@ -106,8 +106,8 @@
                     </fields>
 				</resize>
         <salesexport translate="label">
-                    <label>Lifetime Sales Export</label>
-					<comment>To enable updates of your sales catalog by Scarab, simply insert the following URL in Scarab Dashboard > My Account > Sales Export: http://mywebshopdomain.com/export/scarabsales.csv</comment>
+                    <label>Historical Sales Data export</label>
+					<comment>To speed up the Scarab Recommender's learning process, you have the option to upload historical sales data available in your store logs for analysis. Simply use the export function below, and upload the resulting file (located in /export/scarabsales.csv) to the Scarab Dashboard (http://admin.scarabresearch.com). If you only wish to export part of your historical sales data for Scarab, you can specify a date range. Otherwise all your available sales data will be included in the export.</comment>
 					<frontend_type>text</frontend_type>
                     <sort_order>5</sort_order>
                     <show_in_default>1</show_in_default>
@@ -115,8 +115,8 @@
                     <show_in_store>1</show_in_store>
                     <fields>
                        	<salestimefrom>
-							<label>From Date:</label>
-							<comment>From date you want to collect sales data... (format: YYYY-MM-DD)</comment>
+							<label>Export from:</label>
+							<comment>Start of the exported date range (format: YYYY-MM-DD)</comment>
 							<frontend_type>pdDateSelection</frontend_type>
 							<sort_order>20</sort_order>
 							<show_in_default>1</show_in_default>
@@ -124,8 +124,8 @@
 							<show_in_store>1</show_in_store>
 						</salestimefrom>
                        	<salestimeto>
-							<label>To Date:</label>
-							<comment>To date you want to collect sales data... (format: YYYY-MM-DD)</comment>
+							<label>To:</label>
+							<comment>End of teh exported date range (format: YYYY-MM-DD)</comment>
 							<frontend_type>pdDateSelection</frontend_type>
 							<sort_order>20</sort_order>
 							<show_in_default>1</show_in_default>
@@ -133,8 +133,8 @@
 							<show_in_store>1</show_in_store>
 						</salestimeto>
                        	<salesmanual>
-							<label>Sales export:</label>
-							<comment>Save date fields, before starting an export, or leave blank for all time sales. Sales file will be created in a popup window - please do not close the window while working.</comment>
+							<label>Historical Sales Data:</label>
+							<comment>Export file will be created in a popup window - please do not close the window while working.</comment>
                             <frontend_type>button</frontend_type>
                             <frontend_model>scarabresearch/salesmanualupload</frontend_model>
                             <sort_order>50</sort_order>
