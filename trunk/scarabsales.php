@@ -15,7 +15,7 @@ Mage::app();
 
 try {
 	Mage::getModel('scarabresearch/salescron')->salesbackup();
-	echo "Export successful. Fresh Sales export is located at www.yourwebshopdomain.com/export/scarabsales.csv. You can now close this window.";
+	echo "Export successful. Your exportfile is located at www.yourwebshopdomain.com/export/scarabsales.csv. You can now close this window.";
 } catch (Exception $e) {
     Mage::printException($e);
 }
