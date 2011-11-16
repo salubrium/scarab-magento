@@ -82,7 +82,7 @@ $stock = "true";
 	$renabled = $rconf['resizeenabled'];
 	$width = $rconf['resizewidth'];
 	if ($renabled) {
-	$product_data['image']=Mage::getBaseUrl()."timthumb.php?src=".Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."catalog/product".$product->getImage()."&amp;w=".$width."&amp;zc=1";
+	$product_data['image']=Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB)."timthumb.php?src=".Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."catalog/product".$product->getImage()."&amp;w=".$width."&amp;zc=1";
 	} else {
 	$product_data['image']=Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."catalog/product".$product->getImage();
 	}
