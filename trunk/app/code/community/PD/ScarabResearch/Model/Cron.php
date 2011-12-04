@@ -67,11 +67,10 @@ $kateg = str_replace($categoryId,$catname,$kateg);
 // get price
 $finalprice = Mage::helper('tax')->getPrice($product, $product->getFinalPrice(), 2);
 $stock = "false";	
-if($product->getIsSalable() == 1) {
+if($product['is_in_stock'] == 1) {
 $stock = "true";
 }	
-	
-	
+
 	
 	
 	$product_data = array();
