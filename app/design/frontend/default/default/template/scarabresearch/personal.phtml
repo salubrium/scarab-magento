@@ -7,7 +7,7 @@ $_scarabConfigw = Mage::getStoreConfig('scarab_research/widgets');
 <?php if($_scarabConfigw['scarabcheckout3']) { ?>
 <div id="my-recommendation-container2"></div>
 <script>
-Scarab.recommend('PERSONAL_RECENT', 'my-recommendation-container2', <?php echo $_scarabConfigw['scarabcheckoutcount3']; ?>);
+Scarab.recommend('PERSONAL', 'my-recommendation-container2', <?php echo $_scarabConfigw['scarabcheckoutcount3']; ?>);
 </script>
 <?php }
 }
