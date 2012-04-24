@@ -5,9 +5,28 @@ $_scarabConfigw = Mage::getStoreConfig('scarab_research/widgets');
 ?>     
 <?php if($_scarabConfig['enabled']) { ?>
 <?php if($_scarabConfigw['scarabcheckout3']) { ?>
+<script type="text/html" id="my-recommender-template3" >
+<![CDATA[
+{{ if(SC.page.products.length) { }}
+<div class="scarab-itemlist">
+    <div class="scarab-prev">◀</div>
+    {{ for(var i=0;i<SC.page.p
+roducts.length;i++) { }}
+    <span data-scarabitem="{{= SC.page.products[i].id }}" class="scarab-item">
+        <a href="{{= SC.page.products[i].link }}">
+            <img src="{{= SC.page.products[i].image }}">
+            {{= SC.page.products[i].title }}
+        </a>
+    </span>
+    {{ } }}
+    <div class="scarab-next">▶</div>
+</div>
+{{ } }}
+]]>
+</script>
 <div id="my-recommendation-container3"></div>
 <script>
-Scarab.recommend('PERSONAL', 'my-recommendation-container3', <?php echo $_scarabConfigw['scarabcheckoutcount3']; ?>);
+Scarab.recommend('PERSONAL', 'my-recommendation-container3', <?php echo $_scarabConfigw['scarabcheckoutcount3']; ?>,document.getElementById('my-recommender-template3').innerHTML);
 </script>
 <?php }
 }
