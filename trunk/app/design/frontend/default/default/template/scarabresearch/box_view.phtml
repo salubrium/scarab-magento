@@ -4,21 +4,78 @@ $_scarabConfigw = Mage::getStoreConfig('scarab_research/widgets');
 ?> 
 <?php if($_scarabConfig['enabled']) { ?>
 <?php if($_scarabConfigw['scarabproduct']) { ?>
+<script type="text/html" id="my-recommender-template" >
+<![CDATA[
+{{ if(SC.page.products.length) { }}
+<div class="scarab-itemlist">
+    <div class="scarab-prev">◀</div>
+    {{ for(var i=0;i<SC.page.p
+roducts.length;i++) { }}
+    <span data-scarabitem="{{= SC.page.products[i].id }}" class="scarab-item">
+        <a href="{{= SC.page.products[i].link }}">
+            <img src="{{= SC.page.products[i].image }}">
+            {{= SC.page.products[i].title }}
+        </a>
+    </span>
+    {{ } }}
+    <div class="scarab-next">▶</div>
+</div>
+{{ } }}
+]]>
+</script>
 <div id="my-recommendation-container"></div>
 <script>
-Scarab.recommend('RELATED', 'my-recommendation-container', <?php echo $_scarabConfigw['scarabproductcount']; ?>);
+Scarab.recommend('RELATED', 'my-recommendation-container', <?php echo $_scarabConfigw['scarabproductcount']; ?>,document.getElementById('my-recommender-template').innerHTML);
 </script>
 <?php }
 if($_scarabConfigw['scarabproduct2']) { ?>
+<script type="text/html" id="my-recommender-template2" >
+<![CDATA[
+{{ if(SC.page.products.length) { }}
+<div class="scarab-itemlist">
+    <div class="scarab-prev">◀</div>
+    {{ for(var i=0;i<SC.page.p
+roducts.length;i++) { }}
+    <span data-scarabitem="{{= SC.page.products[i].id }}" class="scarab-item">
+        <a href="{{= SC.page.products[i].link }}">
+            <img src="{{= SC.page.products[i].image }}">
+            {{= SC.page.products[i].title }}
+        </a>
+    </span>
+    {{ } }}
+    <div class="scarab-next">▶</div>
+</div>
+{{ } }}
+]]>
+</script>
 <div id="my-recommendation-container2"></div>
 <script>
-Scarab.recommend('ALSO_VIEWED', 'my-recommendation-container2', <?php echo $_scarabConfigw['scarabproductcount2']; ?>);
+Scarab.recommend('ALSO_VIEWED', 'my-recommendation-container2', <?php echo $_scarabConfigw['scarabproductcount2']; ?>,document.getElementById('my-recommender-template2').innerHTML);
 </script>
 <?php }
 if($_scarabConfigw['scarabproduct3']) { ?>
+<script type="text/html" id="my-recommender-template3" >
+<![CDATA[
+{{ if(SC.page.products.length) { }}
+<div class="scarab-itemlist">
+    <div class="scarab-prev">◀</div>
+    {{ for(var i=0;i<SC.page.p
+roducts.length;i++) { }}
+    <span data-scarabitem="{{= SC.page.products[i].id }}" class="scarab-item">
+        <a href="{{= SC.page.products[i].link }}">
+            <img src="{{= SC.page.products[i].image }}">
+            {{= SC.page.products[i].title }}
+        </a>
+    </span>
+    {{ } }}
+    <div class="scarab-next">▶</div>
+</div>
+{{ } }}
+]]>
+</script>
 <div id="my-recommendation-container3"></div>
 <script>
-Scarab.recommend('ALSO_BOUGHT', 'my-recommendation-container3', <?php echo $_scarabConfigw['scarabproductcount3']; ?>);
+Scarab.recommend('ALSO_BOUGHT', 'my-recommendation-container3', <?php echo $_scarabConfigw['scarabproductcount3']; ?>,document.getElementById('my-recommender-template3').innerHTML);
 </script>
 <?php }
  } ?>
