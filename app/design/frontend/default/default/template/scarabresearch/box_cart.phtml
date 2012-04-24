@@ -10,15 +10,53 @@ $_scarabConfigw = Mage::getStoreConfig('scarab_research/widgets');
  <?php endforeach ?>
 </script>
 <?php if($_scarabConfigw['scarabcheckout']) { ?>
+<script type="text/html" id="my-recommender-template" >
+<![CDATA[
+{{ if(SC.page.products.length) { }}
+<div class="scarab-itemlist">
+    <div class="scarab-prev">◀</div>
+    {{ for(var i=0;i<SC.page.p
+roducts.length;i++) { }}
+    <span data-scarabitem="{{= SC.page.products[i].id }}" class="scarab-item">
+        <a href="{{= SC.page.products[i].link }}">
+            <img src="{{= SC.page.products[i].image }}">
+            {{= SC.page.products[i].title }}
+        </a>
+    </span>
+    {{ } }}
+    <div class="scarab-next">▶</div>
+</div>
+{{ } }}
+]]>
+</script>
 <div id="my-recommendation-container"></div>
 <script>
-Scarab.recommend('CART', 'my-recommendation-container', <?php echo $_scarabConfigw['scarabcheckoutcount']; ?>);
+Scarab.recommend('CART', 'my-recommendation-container', <?php echo $_scarabConfigw['scarabcheckoutcount']; ?>,document.getElementById('my-recommender-template');
 </script>
 <?php }
 if($_scarabConfigw['scarabcheckout2']) { ?>
+<script type="text/html" id="my-recommender-template2" >
+<![CDATA[
+{{ if(SC.page.products.length) { }}
+<div class="scarab-itemlist">
+    <div class="scarab-prev">◀</div>
+    {{ for(var i=0;i<SC.page.p
+roducts.length;i++) { }}
+    <span data-scarabitem="{{= SC.page.products[i].id }}" class="scarab-item">
+        <a href="{{= SC.page.products[i].link }}">
+            <img src="{{= SC.page.products[i].image }}">
+            {{= SC.page.products[i].title }}
+        </a>
+    </span>
+    {{ } }}
+    <div class="scarab-next">▶</div>
+</div>
+{{ } }}
+]]>
+</script>
 <div id="my-recommendation-container2"></div>
 <script>
-Scarab.recommend('PERSONAL', 'my-recommendation-container2', <?php echo $_scarabConfigw['scarabcheckoutcount2']; ?>);
+Scarab.recommend('PERSONAL', 'my-recommendation-container2', <?php echo $_scarabConfigw['scarabcheckoutcount2']; ?>,document.getElementById('my-recommender-template2');
 </script>
 <?php }
 } ?>
