@@ -28,6 +28,8 @@ class PD_ScarabResearch_Model_Cron
 ->getCollection()
 ->addAttributeToSelect('name')
 ->addAttributeToSelect('is_in_stock')
+->addAttributeToFilter('visibility',4)
+->addAttributeToFilter('status',1)
 ->addAttributeToSelect('is_saleable')
 ->addAttributeToSelect('manufacturer', $joinType=false)
 ->addAttributeToSelect('price');
@@ -99,9 +101,6 @@ $stock = "true";
 
  $feed_line = implode(",", $product_data)."\r\n";
 
- /* ***** [ SECOND ICONV TRANSLITERATION FOR PRODUCT INFORMATIONS] ***** */
- //$feed_line = iconv("UTF-8", "ISO-8859-2//TRANSLIT//IGNORE", $feed_line);
- /* ***** [ SECOND ICONV TRANSLITERATION FOR PRODUCT INFORMATIONS] ***** */
  
  fwrite($handle, $feed_line);
  fflush($handle);
