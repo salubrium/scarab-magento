@@ -10,7 +10,7 @@ $_scarabConfigw = Mage::getStoreConfig('scarab_research/widgets');
  <?php endforeach ?>
 </script>
 <?php if($_scarabConfigw['scarabcheckout']) { ?>
-<script type="text/html" id="my-recommender-template" >
+<script type="text/html" id="my-cartpage-template" >
 <![CDATA[
 {{ if(SC.page.products.length) { }}
 <div class="scarab-itemlist">
@@ -31,11 +31,11 @@ roducts.length;i++) { }}
 </script>
 <div id="my-recommendation-container"></div>
 <script>
-Scarab.recommend('CART', 'my-recommendation-container', <?php echo $_scarabConfigw['scarabcheckoutcount']; ?>,document.getElementById('my-recommender-template').innerHTML);
+Scarab.recommend('CART', 'my-recommendation-container', <?php echo $_scarabConfigw['scarabcheckoutcount']; ?>,document.getElementById('my-cartpage-template').innerHTML);
 </script>
 <?php }
 if($_scarabConfigw['scarabcheckout2']) { ?>
-<script type="text/html" id="my-recommender-template2" >
+<script type="text/html" id="my-cartpage-template2" >
 <![CDATA[
 {{ if(SC.page.products.length) { }}
 <div class="scarab-itemlist">
@@ -56,7 +56,7 @@ roducts.length;i++) { }}
 </script>
 <div id="my-recommendation-container2"></div>
 <script>
-Scarab.recommend('PERSONAL', 'my-recommendation-container2', <?php echo $_scarabConfigw['scarabcheckoutcount2']; ?>,document.getElementById('my-recommender-template2').innerHTML);
+Scarab.recommend('PERSONAL', 'my-recommendation-container2', <?php echo $_scarabConfigw['scarabcheckoutcount2']; ?>,document.getElementById('my-cartpage-template2').innerHTML);
 </script>
 <?php }
 } ?>
