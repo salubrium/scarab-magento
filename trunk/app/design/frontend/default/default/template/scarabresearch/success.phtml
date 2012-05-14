@@ -10,7 +10,12 @@ foreach ($sitems as $sitem){
 $sor++;
 $product = $sitem->getProduct();
 
-echo "Scarab.checkOut('".$sitem->getProductId()."', ".($sitem->getQtyOrdered()*1).", ".$sitem[row_total_incl_tax].");";
+if ($sitem[row_total_incl_tax] == "") {
+$price = 0; 
+} else {
+$price = $sitem[row_total_incl_tax]; 
+}
+echo "Scarab.checkOut('".$sitem->getProductId()."', ".($sitem->getQtyOrdered()*1).", ".$price.");";
 
 
 } ?> 
