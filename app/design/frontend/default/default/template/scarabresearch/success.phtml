@@ -9,15 +9,9 @@ $sor = 0;
 foreach ($sitems as $sitem){
 $sor++;
 $product = $sitem->getProduct();
-
-if ($sitem[row_total_incl_tax] == "") {
-$price = 0; 
-} else {
-$price = $sitem[row_total_incl_tax]; 
-}
+if ($sitem[row_total_incl_tax] != "") {
+$price = $sitem[row_total_incl_tax];
 echo "Scarab.checkOut('".$sitem->getProductId()."', ".($sitem->getQtyOrdered()*1).", ".$price.");";
-
-
-} ?> 
-
+}
+} ?>
 </script>
