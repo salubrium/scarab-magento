@@ -5,9 +5,12 @@ $_scarabConfigw = Mage::getStoreConfig('scarab_research/widgets');
 <?php if($_scarabConfig['enabled']) { ?>
 <?php $product_ids = Mage::getModel('checkout/cart')->getProductIds(); ?>
 <script>
-<?php foreach($product_ids as $pid): ?>
-<?php echo "Scarab.cartItem('".$pid."');"; ?>
- <?php endforeach ?>
+<?php foreach($product_ids as $pid) {
+$prod = Mage::getModel('catalog/product')->load($pid);
+if ($prod->getVisibility() != 1) {
+echo "Scarab.cartItem('".$prod->getId()."');"; 
+}
+} ?>
 </script>
 <?php if($_scarabConfigw['scarabcheckout']) { ?>
 <script type="text/html" id="my-cartpage-template" >
