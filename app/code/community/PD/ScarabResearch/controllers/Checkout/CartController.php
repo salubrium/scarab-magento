@@ -45,14 +45,14 @@ class PD_ScarabResearch_Checkout_CartController extends Mage_Checkout_CartContro
             if (!$this->_getSession()->getNoCartRedirect(true)) {
                 if (!$cart->getQuote()->getHasError()){
 					if ($params['qty'] == "") {
-                    $darab = 1;
-                    $ar = Mage::helper('tax')->getPrice($product, $product->getFinalPrice(), 2);
+                    $scqty= 1;
+                    $scprice = Mage::helper('tax')->getPrice($product, $product->getFinalPrice(), 2);
                     } else {
-                    $darab = $params['qty'];
-                    $ar = Mage::helper('tax')->getPrice($product, $product->getFinalPrice(), 2)*$params['qty'];
+                    $scqty= $params['qty'];
+                    $scprice = Mage::helper('tax')->getPrice($product, $product->getFinalPrice(), 2)*$params['qty'];
                }
-					$kosarba = '<script>Scarab.addToCart(\''.$product->getId().'\', '.$darab.', '.$ar.');</script>';
-					$message2 = $this->__($kosarba);
+					$tocart= '<script>Scarab.addToCart(\''.$product->getId().'\', '.$scqty.', '.$scprice.');</script>';
+					$message2 = $this->__($tocart);
 					$message = $this->__('%s was added to your shopping cart.', Mage::helper('core')->htmlEscape($product->getName()));
                     $this->_getSession()->addSuccess($message);
                     $this->_getSession()->addSuccess($message2);
