@@ -4,19 +4,19 @@
 class PD_ScarabResearch_Model_Cron
 {
 
-	
-	public function backup($cron = null)
-	{
-		function extract_numbers($string)
-	{
-		preg_match_all('/([\d]+)/', $string, $match);
+        
+        public function backup($cron = null)
+        {
+                function extract_numbers($string)
+        {
+                preg_match_all('/([\d]+)/', $string, $match);
 
-		return $match[0];
-	}
+                return $match[0];
+        }
         try {
 
      
-		 
+                 
  define('SAVE_FEED_LOCATION',Mage::getBaseDir().'/export/scarab.csv');
  $handle = fopen(SAVE_FEED_LOCATION, 'w');
  $heading = array('item','link','title','image','category','price','available','brand');
@@ -39,7 +39,7 @@ foreach ($collection as $product)
     {
 $id = $product->getId();
 $product = Mage::getModel('catalog/product')->load($id);
-$kateg = "";
+$categ = "";
 
 # Get product's category collection object
 $catCollection = $product->getCategoryCollection();
@@ -48,49 +48,49 @@ $categs = $catCollection->exportToArray();
 $categsToLinks = array();
 # Get categories names
 foreach($categs as $cat){
-$kateg .= $cat['path']."|";
+$categ .= $cat['path']."|";
 }
-$kateg = substr($kateg,0,-1);
-$string = $kateg;
+$categ = substr($categ,0,-1);
+$string = $categ;
 $numbers_array = extract_numbers($string);
 $array = array_unique($numbers_array);
 arsort($array);
 foreach ($array as $categoryId) {
  $category = Mage::getModel('catalog/category')->load($categoryId);
 if ($categoryId < 3) {
-$kateg = str_replace($categoryId."/","",$kateg);
-$kateg = str_replace($categoryId,"",$kateg);
+$categ = str_replace($categoryId."/","",$categ);
+$categ = str_replace($categoryId,"",$categ);
 } else {
 $catname = $category->getName();
-$kateg = str_replace($categoryId,$catname,$kateg);
+$categ = str_replace($categoryId,$catname,$categ);
 }
 }
 
 // get price
 $finalprice = Mage::helper('tax')->getPrice($product, $product->getFinalPrice(), 2);
-$stock = "false";	
+$stock = "false";       
 if($product['is_in_stock'] == 1) {
 $stock = "true";
-}	
+}       
 
-	
-	
-	$product_data = array();
-	$product_data['item']=$product->getId();
+        
+        
+        $product_data = array();
+        $product_data['item']=$product->getId();
       $product_data['product_url']=str_replace("/scarab.php/","/",$product->getProductUrl());
-	$product_data['name']=$product->getName();
+        $product_data['name']=$product->getName();
   $rconf = Mage::getStoreConfig('scarab_research/resize');
-	$renabled = $rconf['resizeenabled'];
-	$width = $rconf['resizewidth'];
-	if ($renabled) {
-	$product_data['image']=Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB)."timthumb.php?src=".Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."catalog/product".$product->getImage()."&amp;w=".$width."&amp;zc=1";
-	} else {
-	$product_data['image']=Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."catalog/product".$product->getImage();
-	}
-   $product_data['kat']=str_replace("/"," > ", $kateg);
-	$product_data['price']=$finalprice;
-	$product_data['status']=$stock;
-	$product_data['manufacturer']=$product->getAttributeText('manufacturer');
+        $renabled = $rconf['resizeenabled'];
+        $width = $rconf['resizewidth'];
+        if ($renabled) {
+        $product_data['image']=Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB)."timthumb.php?src=".Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."catalog/product".$product->getImage()."&amp;w=".$width."&amp;zc=1";
+        } else {
+        $product_data['image']=Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."catalog/product".$product->getImage();
+        }
+   $product_data['kat']=str_replace("/"," > ", $categ);
+        $product_data['price']=$finalprice;
+        $product_data['status']=$stock;
+        $product_data['manufacturer']=$product->getAttributeText('manufacturer');
 
 
  foreach($product_data as $k=>$val){
@@ -119,7 +119,7 @@ $stock = "true";
         }
 
         return $this;
-	}
+        }
    public function backupcron($cron = null)
    {
     file_get_contents(Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'scarab.php');
