@@ -1,3 +1,18 @@
-<?php if (Mage::getSingleton('customer/session')->isLoggedIn()) { ?>
+<?php $_scarabConfig = Mage::getStoreConfig('scarab_research/general'); ?> 
+<?php if($_scarabConfig['enabled']) { ?>
+<script type="text/javascript">
+  var merchantId = '<?php echo $_scarabConfig['merchantid']; ?>';
+  var host = 'http://cdn.scarabresearch.com';
+  if(document.location.protocol === 'https:') {
+    host = 'https://recommender.scarabresearch.com';
+  }
+  document.write(unescape("%3Cscript id='scarab-js-api' src='" +
+       host + "/js/" + merchantId + "/scarab-v2.js'" +
+       "type='text/javascript'%3E%3C/script%3E"));
+</script>
+<? if (Mage::getSingleton('customer/session')->isLoggedIn()) { ?>
 <script type="text/javascript">Scarab.setCustomerId('<?php echo $customerId = Mage::getSingleton('customer/session')->getCustomerId(); ?>');</script>
-<?php } ?>
+<?php 
+}
+}
+?>
