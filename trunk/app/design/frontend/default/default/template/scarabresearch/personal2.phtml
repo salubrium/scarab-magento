@@ -1,15 +1,16 @@
-<?php if (Mage::getSingleton('customer/session')->isLoggedIn()) { ?>
-<?php
-$_scarabConfig = Mage::getStoreConfig('scarab_research/general');
-$_scarabConfigw = Mage::getStoreConfig('scarab_research/widgets');
-?>     
-<?php if($_scarabConfig['enabled']) { ?>
-<?php if($_scarabConfigw['scarabcheckout3']) { ?>
+<?php $_scarabConfig = Mage::getStoreConfig('scarab_research/general'); 
+if($_scarabConfig['enabled']) { 
+if($this->getData('itemnumber')) {
+$itemnumber = $this->getData('itemnumber');
+} else {
+$itemnumber = 4;
+}
+?>
 <script type="text/html" id="my-recommender-template3" >
 <![CDATA[
 {{ if(SC.page.products.length) { }}
 <div class="scarab-itemlist">
-    <div class="scarab-prev">◀</div>
+    <div class="scarab-prev">?</div>
     {{ for(var i=0;i<SC.page.p
 roducts.length;i++) { }}
     <span data-scarabitem="{{= SC.page.products[i].id }}" class="scarab-item">
@@ -19,15 +20,13 @@ roducts.length;i++) { }}
         </a>
     </span>
     {{ } }}
-    <div class="scarab-next">▶</div>
+    <div class="scarab-next">?</div>
 </div>
 {{ } }}
 ]]>
 </script>
 <div id="my-recommendation-container3"></div>
 <script>
-Scarab.recommend('PERSONAL', 'my-recommendation-container3', <?php echo $_scarabConfigw['scarabcheckoutcount3']; ?>,document.getElementById('my-recommender-template3').innerHTML);
+Scarab.recommend('PERSONAL', 'my-recommendation-container3', <?php echo $itemnumber; ?>,document.getElementById('my-recommender-template3').innerHTML);
 </script>
-<?php }
-}
-} ?>
+<?php } ?>
