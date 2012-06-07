@@ -14,7 +14,6 @@
     <default>  
     <reference name="head">
             <action method="addItem" ifconfig="scarab_research/general/enabled"><type>skin_css</type><name>css/scarabresearch.css</name></action>
-            <action method="addItem" ifconfig="scarab_research/general/enabled"><type>skin_js</type><name>js/scarabresearch.js</name></action>
             <block type="page/js_cookie" name="scarab_header" template="scarabresearch/header.phtml"/>
     </reference>
     <reference name="footer">
