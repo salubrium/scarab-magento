@@ -15,10 +15,10 @@ class PD_ScarabResearch_Block_Adminhtml_System_Config_Fieldset_Filetime
     public function render(Varien_Data_Form_Element_Abstract $element)
     {    	
     	$url = Mage::getBaseDir()."/export/scarab.csv";
-		if (filemtime($url) == "") {
-			$html = "<span style=\"color:red;\">No catalog file was found... you need to create one first.</span>";
-		} else {
+		if (file_exists($url)) {
 			$html = "<span style=\"color:green;\">Catalog file last updated: ". date ("F d Y H:i:s.", filemtime($url))."</span>";
+		} else {
+			$html = "<span style=\"color:red;\">No catalog file was found... you need to create one first.</span>";
     	}
     	return $html; 		
     }
