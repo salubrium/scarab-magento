@@ -49,7 +49,7 @@ foreach($data as $sql_row)
 {
 
 if ($sql_row['customer_id'] == "") {
-$cid = 0;
+$cid = str_replace(" ","T",$sql_row['created_at'])."Z";
 } else {
 $cid = $sql_row['customer_id'];
 }
