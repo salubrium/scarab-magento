@@ -104,7 +104,7 @@ $stock = "true";
  
  fwrite($handle, $feed_line);
  fflush($handle);
-
+ $product->clearInstance();
  }
  
  
@@ -125,3 +125,4 @@ $stock = "true";
     file_get_contents(Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'scarab.php');
    }
 }
+
