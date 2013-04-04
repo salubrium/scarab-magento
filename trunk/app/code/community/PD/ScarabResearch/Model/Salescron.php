@@ -48,11 +48,15 @@ $data = Mage::getSingleton('core/resource')->getConnection('core_read')->fetchAl
 foreach($data as $sql_row)
 {
 
-
+if ($sql_row['customer_id'] == "") {
+$cid = 0;
+} else {
+$cid = $sql_row['customer_id'];
+}
 	$product_data = array();
 	$product_data['order']=$sql_row['order_id'];
 	$product_data['item']=$sql_row['product_id'];
-    $product_data['customer']=$sql_row['customer_id'];
+    $product_data['customer']=$cid;
 	$product_data['date']=str_replace(" ","T",$sql_row['created_at'])."Z";
 	$product_data['quantity']=$sql_row['qty_ordered'];
     $product_data['price']=$sql_row['base_price_incl_tax'];
@@ -66,9 +70,6 @@ foreach($data as $sql_row)
 
  $feed_line = implode(",", $product_data)."\r\n";
 
- /* ***** [ SECOND ICONV TRANSLITERATION FOR PRODUCT INFORMATIONS] ***** */
- //$feed_line = iconv("UTF-8", "ISO-8859-2//TRANSLIT//IGNORE", $feed_line);
- /* ***** [ SECOND ICONV TRANSLITERATION FOR PRODUCT INFORMATIONS] ***** */
  
  fwrite($handle, $feed_line);
  fflush($handle);
