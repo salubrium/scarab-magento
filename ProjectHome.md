@@ -1,0 +1,1 @@
+A plugin for easy integration of the Scarab Recommender for the Magento E-commerce platform.
